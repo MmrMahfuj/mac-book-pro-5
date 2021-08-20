@@ -6,10 +6,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mac Book Pro</title>
+    <!--------------------------- bootstrap css link  ------------------------------>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 
 <body>
+    <main class="container mb-5">
+        <section class="mt-5">
+            <div class="row">
+                <!--------------------- Img added -------------------------->
+                <div class="col-6">
+                    <img src="images/mac.png" alt="" class="img-fluid">
+                </div>
+                <div class="col-6">
+                    <!----------------- product header --------------------->
+                    <header>
+                        <h1>Customize your Blue 24-inch iMac with Apple M1 chip.</h1>
+                        <p>apple M1 chp with 8-core CPU with 4 performance cores and 4 efficiency cores 7-core GPU, and
+                            16-core Neural Engine 8-GB unified memory 256GB SSD storage Two Thunderboit / USB 4 ports
+                            Magic
+                            Mouse Magic Keyboard - US English.</p>
+                    </header>
+                    <!------------------- product details ------------------>
+                    <div class="mt-5">
+                        <h5 class="fw-bold">Memory</h5>
+                        <button id="memory-8GB" class="rounded p-2">8GB unified memory</button>
+                        <button id="memory-16GB" class="rounded p-2">16GB unified memory</button>
+                    </div>
+                    <div class="mt-5">
+                        <h5 class="fw-bold">Storage</h5>
+                        <button id="ssd-256GB" class="rounded p-2">256GB SSD storage</button>
+                        <button id="ssd-512GB" class="rounded p-2">512GB SSD storage</button>
+                        <button id="ssd-1TB" class="rounded p-2">1TB SSD storage</button>
+                    </div>
+                    <div class="mt-5">
+                        <h5 class="fw-bold">Choose your delivery option</h5>
+                        <button id="delivery-free-btn" class="rounded p-2">Friday, Aug 25 FREE Prime Delivery</button>
+                        <button id="delivery-prime-btn" class="rounded p-2">Friday, Aug 21 Delivery charge $20</button>
+                    </div>
+                    <div class="mt-5">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Best Price</th>
+                                    <td class="fw-bold">$<span id="best-price">1299</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Extra Memory Cost</th>
+                                    <td class="fw-bold">$<span id="extra-mamory">0</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Extra Storage Cost</th>
+                                    <td class="fw-bold">$<span id="extra-storage">0</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Delivery charge</th>
+                                    <td class="fw-bold">$<span id="delivery-charge">0</span></td>
+                                </tr>
+                            <tfoot>
+                                <tr>
+                                    <th scope="row">Total Price</th>
+                                    <td class="fw-bold">$<span id="total-price">1299</span></td>
+                                </tr>
+                            </tfoot>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
+
+
+
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
