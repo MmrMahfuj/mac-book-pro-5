@@ -4,6 +4,9 @@ const bestPrice = document.getElementById('best-price');
 // memory cost 
 const extraMemory = document.getElementById('extra-mamory');
 
+// final total amount 
+let finalTotalPrice = document.getElementById('final-total-price');
+
 
 document.getElementById('memory-8GB').addEventListener('click', function () {
     extraMemory.innerText = '0';
@@ -48,9 +51,29 @@ function totalCount() {
     const extraStoragePrice = parseInt(extraStorage.innerText);
     const deliveryChargePrice = parseInt(deliveryCharge.innerText);
     const totalAmount = bestPriceAmount + extraMemoryprice + extraStoragePrice + deliveryChargePrice
-    console.log(totalAmount);
     const totalPrice = document.getElementById('total-price').innerText = totalAmount;
+    finalTotalPrice.innerText = totalAmount;
     // const totalPriceNumber = parseInt(totalPrice);
     // totalPrice.innerText = totalAmount;
 
+}
+
+document.getElementById('cupon-btn').addEventListener('click', function () {
+    const cuponInput = document.getElementById('cupon-input');
+    const userCupon = cuponInput.value;
+
+    if (userCupon == "stevekaku") {
+        const discount = totalAmountCount() * 20 / 100;
+        const newdiscountAmount = totalAmountCount() - discount;
+        finalTotalPrice.innerText = newdiscountAmount;
+    }
+})
+
+function totalAmountCount() {
+    const bestPriceAmount = parseInt(bestPrice.innerText);
+    const extraMemoryprice = parseInt(extraMemory.innerText);
+    const extraStoragePrice = parseInt(extraStorage.innerText);
+    const deliveryChargePrice = parseInt(deliveryCharge.innerText);
+    const totalAmount = bestPriceAmount + extraMemoryprice + extraStoragePrice + deliveryChargePrice
+    return totalAmount;
 }
