@@ -22,7 +22,6 @@ document.getElementById('memory-16GB').addEventListener('click', function () {
     productCost("memory", 180);
 })
 
-
 // storage cost 
 const extraStorage = document.getElementById('storage-cost');
 document.getElementById('ssd-256GB').addEventListener('click', function () {
