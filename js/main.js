@@ -2,46 +2,46 @@
 const bestPrice = document.getElementById('best-price');
 
 // memory cost 
-const extraMemory = document.getElementById('extra-mamory');
+const extraMemory = document.getElementById('memory-cost');
 
 // final total amount 
 let finalTotalPrice = document.getElementById('final-total-price');
 
-
-document.getElementById('memory-8GB').addEventListener('click', function () {
-    extraMemory.innerText = '0';
+// dynamically function
+function productCost(product, price) {
+    const productName = document.getElementById(product + '-cost');
+    productName.innerText = price;
     totalCount();
+}
+
+// handle mamory button 
+document.getElementById('memory-8GB').addEventListener('click', function () {
+    productCost("memory", 0);
 })
 document.getElementById('memory-16GB').addEventListener('click', function () {
-    extraMemory.innerText = '180';
-    totalCount();
+    productCost("memory", 180);
 })
 
 
 // storage cost 
-const extraStorage = document.getElementById('extra-storage');
+const extraStorage = document.getElementById('storage-cost');
 document.getElementById('ssd-256GB').addEventListener('click', function () {
-    extraStorage.innerText = '0';
-    totalCount();
+    productCost("storage", 0);
 })
 document.getElementById('ssd-512GB').addEventListener('click', function () {
-    extraStorage.innerText = '100';
-    totalCount();
+    productCost("storage", 100);
 })
 document.getElementById('ssd-1TB').addEventListener('click', function () {
-    extraStorage.innerText = '180';
-    totalCount();
+    productCost("storage", 180);
 })
 
 // delivery cost 
-const deliveryCharge = document.getElementById('delivery-charge');
+const deliveryCharge = document.getElementById('delivery-cost');
 document.getElementById('delivery-free-btn').addEventListener('click', function () {
-    deliveryCharge.innerText = '0';
-    totalCount();
+    productCost("delivery", 0);
 })
 document.getElementById('delivery-prime-btn').addEventListener('click', function () {
-    deliveryCharge.innerText = '20';
-    totalCount();
+    productCost("delivery", 20);
 })
 
 // total count 
