@@ -46,18 +46,11 @@ document.getElementById('delivery-prime-btn').addEventListener('click', function
 
 // total count 
 function totalCount() {
-    const bestPriceAmount = parseInt(bestPrice.innerText);
-    const extraMemoryprice = parseInt(extraMemory.innerText);
-    const extraStoragePrice = parseInt(extraStorage.innerText);
-    const deliveryChargePrice = parseInt(deliveryCharge.innerText);
-    const totalAmount = bestPriceAmount + extraMemoryprice + extraStoragePrice + deliveryChargePrice
-    const totalPrice = document.getElementById('total-price').innerText = totalAmount;
-    finalTotalPrice.innerText = totalAmount;
-    // const totalPriceNumber = parseInt(totalPrice);
-    // totalPrice.innerText = totalAmount;
-
+    const totalPrice = document.getElementById('total-price').innerText = totalAmountCount();
+    finalTotalPrice.innerText = totalAmountCount();
 }
 
+// discount cupon handle 
 document.getElementById('cupon-btn').addEventListener('click', function () {
     const cuponInput = document.getElementById('cupon-input');
     const userCupon = cuponInput.value;
@@ -67,8 +60,10 @@ document.getElementById('cupon-btn').addEventListener('click', function () {
         const newdiscountAmount = totalAmountCount() - discount;
         finalTotalPrice.innerText = newdiscountAmount;
     }
+    cuponInput.value = '';
 })
 
+// total amount function 
 function totalAmountCount() {
     const bestPriceAmount = parseInt(bestPrice.innerText);
     const extraMemoryprice = parseInt(extraMemory.innerText);
